@@ -11,38 +11,172 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Event 
-                    Planner -Sparkling event</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-0">
+  <div class="container-fluid">
+                <a class="navbar-brand me-3" asp-page="/Index"> <i class="bi bi-house-door-fill"></i> Sparkling event</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+             </button>
+         <div class="collapse navbar-collapse" id="navbarColor02">
+              <ul class="navbar-nav me-auto">
+
+            <li class="nav-item m-4">
+            <a class="nav-link" asp-area="" asp-page="/Party">Parties</a>
+            </li>
+
+            <li class="nav-item m-4">
+            <a class="nav-link" asp-area="" asp-page="/CorporateEvent"> Corporate events</a>
+            </li>
+
+            <li class="nav-item m-4">
+            <a class="nav-link" asp-area="" asp-page="/18thBirthday"> 18th Birthday Parties</a>
+            </li>
+
+       @* <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+               <i class="bi bi-images"></i>Events</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" asp-area="" asp-page="/Party"><i class="bi bi-caret-right-fill"></i>Parties</a>
+            <a class="dropdown-item" asp-area="" asp-page="/CorporateEvent"><i class="bi bi-caret-right-fill"></i>Cosporate events</a>
+            <a class="dropdown-item" asp-area="" asp-page="/18thBirthday"><i class="bi bi-caret-right-fill"></i>18th Birthday Parties</a>
+          </div>
+        </li>*@
+
+        <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle m-4" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+               <i class="bi bi-balloon-heart-fill"></i>Services</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" asp-area="" asp-page="/TypeEvents/Index"><i class="bi bi-1-circle-fill"></i>Events types</a>
+            <a class="dropdown-item" asp-area="" asp-page="/Locations/Index"><i class="bi bi-2-circle-fill"></i>Locations</a>
+            <a class="dropdown-item" asp-area="" asp-page="/Foods/Index"><i class="bi bi-3-circle-fill"></i>Food</a>
+            <a class="dropdown-item" asp-area="" asp-page="/Drinks/Index"><i class="bi bi-4-circle-fill"></i>Drink</a>
+            <a class="dropdown-item" asp-area="" asp-page="/Photos/Index"><i class="bi bi-5-circle-fill"></i>Photos/Videos</a>
+            <a class="dropdown-item" asp-area="" asp-page="/Ornaments/Index"><i class="bi bi-6-circle-fill"></i>Other</a>
+          </div>
+        </li>
+
+         <li class="nav-item m-4">
+             <a class="nav-link" asp-area="" asp-page="/Contact">Contact us</a>
+                </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle m-4" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="bi bi-people-fill"></i>
+                                Profile
+                            </a>
+                            <div class="dropdown-menu">
+                        <a class="dropdown-item" asp-area="" asp-page="/Login"><i class="bi bi-box-arrow-right"></i>Log in</a>
+                        <a class="dropdown-item" asp-area="" asp-page="/Register"><i class="bi bi-r-square-fill"></i>Register</a>
+                        <a class="dropdown-item" asp-area="" asp-page="/Profile"><i class="bi bi-person-lines-fill"></i>My profile</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="search" placeholder="Search">
+       @* <button class="btn btn-lg btn-primary" asp-area="" asp-page="/Eveniment/Index">Create your event</button>*@
+       @* <button type="button" class="btn btn-primary" asp-area="" asp-page="/Eveniment/Index">Create your event</button>*@
+      <button class="btn btn-secondary my-2 my-sm-0" asp-area="" asp-page="/Eveniment/Index">Create your event</button>
+      </form>
+    </div>
+  </div>
+</nav>
     </header>
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - EventPlannerWebApplication - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="border-top footer text-muted" style="background-color: black /*#caced1*/;">
+        <!-- Grid container -->
+       @* <div class="container p-2">
+            <!-- Section: Images -->
+            <section class="">
+                <div class="row">
+                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                             data-ripple-color="light">
+                            <img src="~/images/footer/f1.jpg" 
+                                 class="w-100" />
+                            <a href="#!">
+                                <div class="mask"
+                                     style="background-color: darkgoldenrod;"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                             data-ripple-color="light">
+                            <img src="~/images/footer/f2.jpg" 
+                                 class="w-100" />
+                            <a href="#!">
+                                <div class="mask"
+                                     style="background-color: darkgoldenrod;"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                             data-ripple-color="light">
+                            <img src="~/images/footer/wonderland.jpg" 
+                                 class="w-100" />
+                            <a href="#!">
+                                <div class="mask"
+                                     style="background-color: darkgoldenrod;"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                             data-ripple-color="light">
+                            <img src="~/images/footer/chios.jpg" 
+                                 class="w-100" />
+                            <a href="#!">
+                                <div class="mask"
+                                     style="background-color: darkgoldenrod;"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                             data-ripple-color="light">
+                            <img src="~/images/footer/f3.jpg" 
+                                 class="w-100" />
+                            <a href="#!">
+                                <div class="mask"
+                                     style="background-color: darkgoldenrod;"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                             data-ripple-color="light">
+                            <img src="~/images/footer/f4.jpg" 
+                                 class="w-100" />
+                            <a href="#!">
+                                <div class="mask"
+                                     style="background-color: darkgoldenrod;"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Images -->
+        </div>*@
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Event Planner @DateTime.Now.Year 
+            <a class="text-white" asp-area="" asp-page="/Index">  Sparkling event</a>
         </div>
+        <!-- Copyright -->
     </footer>
+   @* <footer class="border-top footer text-muted">
+        <div class="container">
+          Event planner  -  @DateTime.Now.Year <a asp-area="" asp-page="/Index">  Sparkling event</a>
+        </div>
+    </footer>*@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
