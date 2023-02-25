@@ -13,37 +13,27 @@
     <header>
        <nav class="navbar navbar-expand-lg navbar-dark @*bg-dark*@ px-0" style="background-color:black">
             <div class="container-fluid">
-                <a class="navbar-brand me-3" style="color:darkgoldenrod" asp-page="/Index"> <i class="bi bi-house-door-fill"></i> Sparkling event</a>
+                <a class="navbar-brand me-2" style="color:darkgoldenrod" asp-page="/Index"> <i class="bi bi-house-door-fill"></i> Sparkling event</a>
              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
              </button>
          <div class="collapse navbar-collapse" id="navbarColor02">
               <ul class="navbar-nav me-auto">
 
-            <li class="nav-item m-3" style="text-decoration:underline; color:darkgoldenrod">
+            <li class="nav-item m-2" style="text-decoration:underline; color:darkgoldenrod">
             <a class="nav-link" style="color:darkgoldenrod" asp-area="" asp-page="/Party">Parties</a>
             </li>
 
-            <li class="nav-item m-3" style="text-decoration:underline; color:darkgoldenrod">
+            <li class="nav-item m-2" style="text-decoration:underline; color:darkgoldenrod">
             <a class="nav-link" style="color:darkgoldenrod" asp-area="" asp-page="/CorporateEvent"> Corporate events</a>
             </li>
 
-            <li class="nav-item m-3" style="text-decoration:underline; color:darkgoldenrod">
+            <li class="nav-item m-2" style="text-decoration:underline; color:darkgoldenrod">
             <a class="nav-link" style="color:darkgoldenrod" asp-area="" asp-page="/18thBirthday"> 18th Birthday Parties</a>
             </li>
 
-       @* <li class="nav-item dropdown">
-           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-               <i class="bi bi-images"></i>Events</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" asp-area="" asp-page="/Party"><i class="bi bi-caret-right-fill"></i>Parties</a>
-            <a class="dropdown-item" asp-area="" asp-page="/CorporateEvent"><i class="bi bi-caret-right-fill"></i>Cosporate events</a>
-            <a class="dropdown-item" asp-area="" asp-page="/18thBirthday"><i class="bi bi-caret-right-fill"></i>18th Birthday Parties</a>
-          </div>
-        </li>*@
-
         <li class="nav-item dropdown">
-           <a class="nav-link dropdown-toggle m-3" style="color:darkgoldenrod" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+           <a class="nav-link dropdown-toggle m-2" style="color:darkgoldenrod" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                <i class="bi bi-balloon-heart-fill"></i>Services</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" asp-area="" asp-page="/TypeEvents/Index"><i class="bi bi-1-circle-fill"></i>Events types</a>
@@ -55,11 +45,14 @@
           </div>
         </li>
 
-         <li class="nav-item m-3">
+         <li class="nav-item m-2">
                             <a class="nav-link" style="color:darkgoldenrod" asp-area="" asp-page="/Contact"><i class="bi bi-menu-up"></i>Contact us</a>
                 </li>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" style="color:darkgoldenrod" asp-area="" asp-page="/Calendar"><i class="bi bi-calendar-date-fill"></i>Calendar</a>
+                        </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle m-3" style="color:darkgoldenrod" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle m-2" style="color:darkgoldenrod" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                 <i class="bi bi-people-fill"></i>
                                 Profile
                             </a>
