@@ -29,6 +29,7 @@ namespace EventPlannerWebApplication.Pages.Locatii
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+
         public async Task<IActionResult> OnPostAsync()
         {
             byte[] bytes = null;

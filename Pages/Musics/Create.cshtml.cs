@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using EventPlannerWebApplication.Data;
 using EventPlannerWebApplication.Models.Services;
 
-namespace EventPlannerWebApplication.Pages.Foods
+namespace EventPlannerWebApplication.Pages.Musics
 {
     public class CreateModel : PageModel
     {
@@ -25,16 +25,16 @@ namespace EventPlannerWebApplication.Pages.Foods
         }
 
         [BindProperty]
-        public Food Food { get; set; }
+        public Music Music { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
             byte[] bytes = null;
-            if (Food.MancareImageFile != null)
+            if (Music.DjImageFile != null)
             {
-                using (Stream fs = Food.MancareImageFile.OpenReadStream())
+                using (Stream fs = Music.DjImageFile.OpenReadStream())
                 {
                     using (BinaryReader br = new BinaryReader(fs))
                     {
@@ -43,12 +43,10 @@ namespace EventPlannerWebApplication.Pages.Foods
                     }
 
                 }
-                Food.MancareImage = Convert.ToBase64String(bytes, 0, bytes.Length);
+                Music.DjImage = Convert.ToBase64String(bytes, 0, bytes.Length);
             }
-            
-            _context.Food.Add(Food);
+            _context.Music.Add(Music);
             await _context.SaveChangesAsync();
-
             return RedirectToPage("./Index");
 
             //if (!ModelState.IsValid)
@@ -56,7 +54,7 @@ namespace EventPlannerWebApplication.Pages.Foods
             //      return Page();
             //  }
 
-            //  _context.Food.Add(Food);
+            //  _context.Music.Add(Music);
             //  await _context.SaveChangesAsync();
 
             //  return RedirectToPage("./Index");

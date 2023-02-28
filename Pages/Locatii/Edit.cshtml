@@ -11,13 +11,13 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Locatie.ID" />
             <div class="form-group">
-                <label asp-for="Locatie.LocationImage" class="control-label"></label>
-                <input asp-for="Locatie.LocationImage" class="form-control" />
-                <span asp-validation-for="Locatie.LocationImage" class="text-danger"></span>
+                <label asp-for="Locatie.LocationImageFile" class="control-label"></label>
+                <input asp-for="Locatie.LocationImageFile" class="form-control" />
+                <span asp-validation-for="Locatie.LocationImageFile" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Locatie.DenumireLocatie" class="control-label"></label>

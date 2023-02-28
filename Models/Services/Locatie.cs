@@ -7,6 +7,7 @@ namespace EventPlannerWebApplication.Models.Services
         public int ID { get; set; }
 
         public string LocationImage { get; set; }
+
         [NotMapped]
         public IFormFile LocationImageFile { get; set; }
 
