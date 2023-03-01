@@ -1,5 +1,5 @@
 ﻿@page
-@model EventPlannerWebApplication.Pages.Musics.IndexModel
+@model EventPlannerWebApplication.Pages.Drinks.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -14,28 +14,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Music[0].NumeDj)
+                @Html.DisplayNameFor(model => model.Drink[0].DenumireBautura)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Music[0].PretDj)
+                @Html.DisplayNameFor(model => model.Drink[0].PretBautura)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Music[0].DjImage)
+                @Html.DisplayNameFor(model => model.Drink[0].BauturaImage)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Music) {
+@foreach (var item in Model.Drink) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.NumeDj)
+                @Html.DisplayFor(modelItem => item.DenumireBautura)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PretDj)
+                @Html.DisplayFor(modelItem => item.PretBautura)
             </td>
             <td>
-             <img src="data:image/jpg;base64, @item.DjImage" width="120px" height="120px" />
+               <img src="data:image/jpg;base64, @item.BauturaImage" width="120px" height="120px" />
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |

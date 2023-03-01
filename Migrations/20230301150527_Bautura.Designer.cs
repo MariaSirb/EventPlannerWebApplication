@@ -3,6 +3,7 @@ using EventPlannerWebApplication.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventPlannerWebApplication.Migrations
 {
     [DbContext(typeof(EventPlannerWebApplicationContext))]
-    partial class EventPlannerWebApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230301150527_Bautura")]
+    partial class Bautura
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -122,30 +124,6 @@ namespace EventPlannerWebApplication.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Music");
-                });
-
-            modelBuilder.Entity("EventPlannerWebApplication.Models.Services.Photograph", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
-
-                    b.Property<string>("DenumirePhotograph")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhotographImage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("PretPhotograph")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Photograph");
                 });
 #pragma warning restore 612, 618
         }

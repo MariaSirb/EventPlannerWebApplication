@@ -18,5 +18,9 @@ namespace EventPlannerWebApplication.Data
         public DbSet<EventPlannerWebApplication.Models.Services.Food> Food { get; set; } = default!;
 
         public DbSet<EventPlannerWebApplication.Models.Services.Music> Music { get; set; }
+
+        public DbSet<EventPlannerWebApplication.Models.Services.Drink> Drink { get; set; }
+
+        public DbSet<EventPlannerWebApplication.Models.Services.Photograph> Photograph { get; set; }
     }
 }
