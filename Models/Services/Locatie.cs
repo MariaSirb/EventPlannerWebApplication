@@ -16,5 +16,7 @@ namespace EventPlannerWebApplication.Models.Services
         public int CapacitateMaxima { get; set; }
         public decimal PretLocatie { get; set; }
 
+        public ICollection<MyEvent> MyEvents { get; set; }  
+
     }
 }

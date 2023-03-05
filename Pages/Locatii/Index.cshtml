@@ -60,10 +60,11 @@
 }
 
 <script>
-    function openPopup(){
+    function openPopup(item){
         console.log("popup opened");
         document.getElementById("popup").style.display = "block";
-        document.getElementById("item").innerHTML = myObject.item;
+        document.getElementById("item").innerHTML = item;
+        console.log(item);
     }
     function closePopup(){
         console.log("popup closed");

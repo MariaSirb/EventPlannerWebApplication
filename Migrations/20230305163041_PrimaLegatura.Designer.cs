@@ -4,6 +4,7 @@ using EventPlannerWebApplication.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventPlannerWebApplication.Migrations
 {
     [DbContext(typeof(EventPlannerWebApplicationContext))]
-    partial class EventPlannerWebApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230305163041_PrimaLegatura")]
+    partial class PrimaLegatura
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -133,9 +135,6 @@ namespace EventPlannerWebApplication.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int?>("LocatieID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Mentiune")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -144,8 +143,6 @@ namespace EventPlannerWebApplication.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("LocatieID");
 
                     b.HasIndex("TipEvenimentID");
 
@@ -195,22 +192,11 @@ namespace EventPlannerWebApplication.Migrations
 
             modelBuilder.Entity("EventPlannerWebApplication.Models.Services.MyEvent", b =>
                 {
-                    b.HasOne("EventPlannerWebApplication.Models.Services.Locatie", "Locatie")
-                        .WithMany("MyEvents")
-                        .HasForeignKey("LocatieID");
-
                     b.HasOne("EventPlannerWebApplication.Models.TipEveniment", "TipEveniment")
                         .WithMany("MyEvents")
                         .HasForeignKey("TipEvenimentID");
 
-                    b.Navigation("Locatie");
-
                     b.Navigation("TipEveniment");
-                });
-
-            modelBuilder.Entity("EventPlannerWebApplication.Models.Services.Locatie", b =>
-                {
-                    b.Navigation("MyEvents");
                 });
 
             modelBuilder.Entity("EventPlannerWebApplication.Models.TipEveniment", b =>

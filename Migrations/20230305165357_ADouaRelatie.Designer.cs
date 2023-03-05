@@ -4,6 +4,7 @@ using EventPlannerWebApplication.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventPlannerWebApplication.Migrations
 {
     [DbContext(typeof(EventPlannerWebApplicationContext))]
-    partial class EventPlannerWebApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230305165357_ADouaRelatie")]
+    partial class ADouaRelatie
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -195,7 +197,7 @@ namespace EventPlannerWebApplication.Migrations
 
             modelBuilder.Entity("EventPlannerWebApplication.Models.Services.MyEvent", b =>
                 {
-                    b.HasOne("EventPlannerWebApplication.Models.Services.Locatie", "Locatie")
+                    b.HasOne("EventPlannerWebApplication.Models.Services.Locatie", "Locatia")
                         .WithMany("MyEvents")
                         .HasForeignKey("LocatieID");
 
@@ -203,7 +205,7 @@ namespace EventPlannerWebApplication.Migrations
                         .WithMany("MyEvents")
                         .HasForeignKey("TipEvenimentID");
 
-                    b.Navigation("Locatie");
+                    b.Navigation("Locatia");
 
                     b.Navigation("TipEveniment");
                 });
