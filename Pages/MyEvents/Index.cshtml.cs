@@ -28,6 +28,8 @@ namespace EventPlannerWebApplication.Pages.MyEvents
                 MyEvent = await _context.MyEvent
                     .Include(b=>b.TipEveniment)
                     .Include(b=>b.Locatie)
+                    .Include(b=>b.Music)
+                    .Include(b=>b.Photograph)
                     .ToListAsync();
             }
         }

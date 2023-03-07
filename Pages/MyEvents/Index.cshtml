@@ -22,6 +22,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.MyEvent[0].Locatie.DenumireLocatie)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyEvent[0].Music.NumeDj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyEvent[0].Photograph.DenumirePhotograph)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -36,6 +42,12 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Locatie.DenumireLocatie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Music.NumeDj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Photograph.DenumirePhotograph)
                 </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |

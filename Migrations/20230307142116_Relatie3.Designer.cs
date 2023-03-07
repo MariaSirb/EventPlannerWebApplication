@@ -4,6 +4,7 @@ using EventPlannerWebApplication.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventPlannerWebApplication.Migrations
 {
     [DbContext(typeof(EventPlannerWebApplicationContext))]
-    partial class EventPlannerWebApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230307142116_Relatie3")]
+    partial class Relatie3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -143,9 +145,6 @@ namespace EventPlannerWebApplication.Migrations
                     b.Property<int?>("MusicID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PhotographID")
-                        .HasColumnType("int");
-
                     b.Property<int?>("TipEvenimentID")
                         .HasColumnType("int");
 
@@ -154,8 +153,6 @@ namespace EventPlannerWebApplication.Migrations
                     b.HasIndex("LocatieID");
 
                     b.HasIndex("MusicID");
-
-                    b.HasIndex("PhotographID");
 
                     b.HasIndex("TipEvenimentID");
 
@@ -213,10 +210,6 @@ namespace EventPlannerWebApplication.Migrations
                         .WithMany("MyEvents")
                         .HasForeignKey("MusicID");
 
-                    b.HasOne("EventPlannerWebApplication.Models.Services.Photograph", "Photograph")
-                        .WithMany("MyEvents")
-                        .HasForeignKey("PhotographID");
-
                     b.HasOne("EventPlannerWebApplication.Models.TipEveniment", "TipEveniment")
                         .WithMany("MyEvents")
                         .HasForeignKey("TipEvenimentID");
@@ -224,8 +217,6 @@ namespace EventPlannerWebApplication.Migrations
                     b.Navigation("Locatie");
 
                     b.Navigation("Music");
-
-                    b.Navigation("Photograph");
 
                     b.Navigation("TipEveniment");
                 });
@@ -236,11 +227,6 @@ namespace EventPlannerWebApplication.Migrations
                 });
 
             modelBuilder.Entity("EventPlannerWebApplication.Models.Services.Music", b =>
-                {
-                    b.Navigation("MyEvents");
-                });
-
-            modelBuilder.Entity("EventPlannerWebApplication.Models.Services.Photograph", b =>
                 {
                     b.Navigation("MyEvents");
                 });

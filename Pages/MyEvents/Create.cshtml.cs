@@ -25,6 +25,9 @@ namespace EventPlannerWebApplication.Pages.MyEvents
         {
             ViewData["TipEvenimentID"] = new SelectList(_context.Set<TipEveniment>(), "ID", "DenumireEveniment");
             ViewData["LocatieID"] = new SelectList(_context.Set<Locatie>(), "ID", "DenumireLocatie");
+            ViewData["MusicID"] = new SelectList(_context.Set<Music>(), "ID", "NumeDj");
+            ViewData["PhotographID"] = new SelectList(_context.Set<Photograph>(), "ID", "DenumirePhotograph");
+
 
             return Page();
         }

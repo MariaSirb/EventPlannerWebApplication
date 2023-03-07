@@ -11,9 +11,22 @@
         public int? TipEvenimentID { get; set; }
         public TipEveniment? TipEveniment { get; set; }
 
-        // Facem relatia cu Locatia
+        // Facem relatia cu Locatia 
 
         public int? LocatieID { get; set; }
         public Locatie? Locatie { get; set; }
+
+        // Facem relatia cu DJ(Muzica)
+
+        public int? MusicID { get; set; }
+        public Music? Music { get; set; }
+
+        //Facem relatia cu Fotograful
+
+        public int? PhotographID { get; set; }
+        public Photograph? Photograph { get;set; }
+
     }
+
+
 }
