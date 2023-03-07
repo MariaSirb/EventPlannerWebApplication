@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.CodeAnalysis.FlowAnalysis.DataFlow.ValueContentAnalysis;
 using Microsoft.Extensions.Logging;
 
 namespace EventPlannerWebApplication.Areas.Identity.Pages.Account
@@ -134,8 +135,9 @@ namespace EventPlannerWebApplication.Areas.Identity.Pages.Account
             if (result.Succeeded)
             {
                 _logger.LogInformation("User created a new account with password.");
-               
-                var userId = await _userManager.GetUserIdAsync(user);
+
+                var role = await _userManager.AddToRoleAsync(user, "User");  //e va insera o noua inregistrare in tabelul AspNetUserRoles care va asocia id-ul utilizatorului cu rolul de User
+                                var userId = await _userManager.GetUserIdAsync(user);
                 var code = await
                _userManager.GenerateEmailConfirmationTokenAsync(user);
                 code =
