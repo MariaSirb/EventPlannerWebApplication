@@ -26,6 +26,10 @@
         public int? PhotographID { get; set; }
         public Photograph? Photograph { get;set; }
 
+        //Clientul
+
+        public int? ClientID { get; set; }
+        public Client? Client { get; set; }
     }
 
 

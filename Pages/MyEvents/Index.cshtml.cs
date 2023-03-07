@@ -30,6 +30,7 @@ namespace EventPlannerWebApplication.Pages.MyEvents
                     .Include(b=>b.Locatie)
                     .Include(b=>b.Music)
                     .Include(b=>b.Photograph)
+                    .Include(b=>b.Client)
                     .ToListAsync();
             }
         }

@@ -27,5 +27,9 @@ namespace EventPlannerWebApplication.Data
         public DbSet<EventPlannerWebApplication.Models.TipEveniment> TipEveniment { get; set; }
 
         public DbSet<EventPlannerWebApplication.Models.Services.MyEvent> MyEvent { get; set; }
+
+        public DbSet<EventPlannerWebApplication.Models.Client> Client { get; set; }
+
+        public DbSet<EventPlannerWebApplication.Models.CreatingEvent> CreatingEvent { get; set; }
     }
 }

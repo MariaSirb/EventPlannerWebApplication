@@ -22,6 +22,58 @@ namespace EventPlannerWebApplication.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("EventPlannerWebApplication.Models.Client", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("Adress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Client");
+                });
+
+            modelBuilder.Entity("EventPlannerWebApplication.Models.CreatingEvent", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<int?>("ClientID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MyEventID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ClientID");
+
+                    b.HasIndex("MyEventID");
+
+                    b.ToTable("CreatingEvent");
+                });
+
             modelBuilder.Entity("EventPlannerWebApplication.Models.Services.Drink", b =>
                 {
                     b.Property<int>("ID")
@@ -133,6 +185,9 @@ namespace EventPlannerWebApplication.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<int?>("ClientID")
+                        .HasColumnType("int");
+
                     b.Property<int?>("LocatieID")
                         .HasColumnType("int");
 
@@ -150,6 +205,8 @@ namespace EventPlannerWebApplication.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("ClientID");
 
                     b.HasIndex("LocatieID");
 
@@ -203,8 +260,27 @@ namespace EventPlannerWebApplication.Migrations
                     b.ToTable("TipEveniment");
                 });
 
+            modelBuilder.Entity("EventPlannerWebApplication.Models.CreatingEvent", b =>
+                {
+                    b.HasOne("EventPlannerWebApplication.Models.Client", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientID");
+
+                    b.HasOne("EventPlannerWebApplication.Models.Services.MyEvent", "MyEvent")
+                        .WithMany()
+                        .HasForeignKey("MyEventID");
+
+                    b.Navigation("Client");
+
+                    b.Navigation("MyEvent");
+                });
+
             modelBuilder.Entity("EventPlannerWebApplication.Models.Services.MyEvent", b =>
                 {
+                    b.HasOne("EventPlannerWebApplication.Models.Client", "Client")
+                        .WithMany("MyEvents")
+                        .HasForeignKey("ClientID");
+
                     b.HasOne("EventPlannerWebApplication.Models.Services.Locatie", "Locatie")
                         .WithMany("MyEvents")
                         .HasForeignKey("LocatieID");
@@ -221,6 +297,8 @@ namespace EventPlannerWebApplication.Migrations
                         .WithMany("MyEvents")
                         .HasForeignKey("TipEvenimentID");
 
+                    b.Navigation("Client");
+
                     b.Navigation("Locatie");
 
                     b.Navigation("Music");
@@ -228,6 +306,11 @@ namespace EventPlannerWebApplication.Migrations
                     b.Navigation("Photograph");
 
                     b.Navigation("TipEveniment");
+                });
+
+            modelBuilder.Entity("EventPlannerWebApplication.Models.Client", b =>
+                {
+                    b.Navigation("MyEvents");
                 });
 
             modelBuilder.Entity("EventPlannerWebApplication.Models.Services.Locatie", b =>
