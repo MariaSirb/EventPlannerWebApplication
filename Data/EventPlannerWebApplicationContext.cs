@@ -30,6 +30,6 @@ namespace EventPlannerWebApplication.Data
 
         public DbSet<EventPlannerWebApplication.Models.Client> Client { get; set; }
 
-        public DbSet<EventPlannerWebApplication.Models.CreatingEvent> CreatingEvent { get; set; }
+        //public DbSet<EventPlannerWebApplication.Models.CreatingEvent> CreatingEvent { get; set; }
     }
 }

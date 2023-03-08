@@ -20,5 +20,7 @@ namespace EventPlannerWebApplication.Models.Services
         public string BauturaImage { get; set; }
         [NotMapped]
         public IFormFile BauturaImageFile { get; set; }
+
+        
     }
 }

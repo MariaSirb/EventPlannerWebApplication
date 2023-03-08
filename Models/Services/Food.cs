@@ -11,5 +11,7 @@ namespace EventPlannerWebApplication.Models.Services
         public string MancareImage { get; set; }
         [NotMapped]
         public IFormFile MancareImageFile { get; set; }
+
+        
     }
 }

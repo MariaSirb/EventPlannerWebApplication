@@ -1,9 +1,10 @@
-﻿namespace EventPlannerWebApplication.Models.Services
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EventPlannerWebApplication.Models.Services
 {
     public class MyEvent
     {
         public int ID { get; set; }
-
         public string Mentiune { get; set; }
 
         // Facem relatia cu Tip eveniment
@@ -30,6 +31,11 @@
 
         public int? ClientID { get; set; }
         public Client? Client { get; set; }
+
+
+        
+
+
     }
 
 

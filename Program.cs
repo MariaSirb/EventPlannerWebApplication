@@ -18,6 +18,7 @@ builder.Services.AddDbContext<EventPlannerWebApplicationContext>(options =>
 
 builder.Services.AddDbContext<LibraryIdentityContext>(options =>
      options.UseSqlServer(builder.Configuration.GetConnectionString("EventPlannerWebApplicationContext") ?? throw new InvalidOperationException("Connectionstring 'EventPlannerWebApplicationContext' not found.")));
+
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>options.SignIn.RequireConfirmedAccount = true) 
     .AddRoles<IdentityRole>()  //serviciile de autorizare bazate pe roluri
     .AddEntityFrameworkStores<LibraryIdentityContext>();
